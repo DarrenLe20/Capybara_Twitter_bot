@@ -1,7 +1,8 @@
-import requests
+from urllib import parse, request
+import json
 import tweepy as tp
-import urllib.parse as parse
 
+# import ./config.py where keys are stored
 import config
 
 
@@ -20,6 +21,8 @@ def get_gif():
         "api_key": config.GIPHY_API_KEY,
         "limit": "1"
     })
+    with request.urlopen("".join((url, "?", params))) as response:
+        data = json.loads(response.read())
 
 
 def tweet(api, text):
