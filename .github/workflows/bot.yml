@@ -8,6 +8,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: env
     strategy:
       fail-fast: false
       matrix:
