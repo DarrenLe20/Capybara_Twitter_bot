@@ -4,7 +4,7 @@ A Twitter bot that tweets a gif of a capybara every 24 hours.
 
 ## How it works
 
-The bot is written in Python and uses the [Tweepy](https://www.tweepy.org/) library to interact with the Twitter API. The bot exracts a random GIF with the hashtag "
+The bot is written in Python and uses the [Tweepy](https://www.tweepy.org/) library to interact with the Twitter API. The bot extracts a random GIF with the hashtag "
 capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 
 ## Running the bot locally
