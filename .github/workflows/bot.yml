@@ -57,5 +57,4 @@ jobs:
           ACCESS: ${{ secrets.ACCESS }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
-        run: |
-          python main.py
+        run: python main.py
