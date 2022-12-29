@@ -20,7 +20,8 @@ def api_auth():
     # auth = tp.OAuthHandler(os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
     # auth.set_access_token(os.getenv("ACCESS_TOKEN"),
     #                       os.getenv("ACCESS_SECRET_TOKEN"))
-    auth = tp.OAuthHandler(os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
+    auth = tp.OAuth1UserHandler(
+        os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
     auth.set_access_token(os.getenv("ACCESS"), os.getenv("ACCESS_SECRET"))
     api = tp.API(auth)
     return api
