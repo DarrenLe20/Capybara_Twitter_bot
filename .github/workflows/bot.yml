@@ -54,20 +54,20 @@ jobs:
         python-version: ["3.8", "3.9", "3.10"]
     steps:
       - name: Checkout repository content
-        uses: actions/checkout@v3 
-        
+        uses: actions/checkout@v3
+
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          
+
       - uses: actions/checkout@v3
       - name: run script
         env:
@@ -76,4 +76,4 @@ jobs:
           ACCESS: ${{ secrets.ACCESS }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
-        run: python /bot/main.py
+        run: python main.py
