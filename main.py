@@ -44,7 +44,7 @@ def tweet(api):
         f.close()
     # tweet gif with date
     msg = get_current_date()
-    # api.update_with_media("image.gif", msg)
+    api.update_with_media("image.gif", msg)
     print("Tweeted successfully!")
 
 
@@ -52,5 +52,5 @@ if __name__ == "__main__":
     api = api_auth()
     while True:
         tweet(api)
-        # sleep(config.SLEEP_TIME)
-        break
+        sleep(config.SLEEP_TIME)
+        # break
