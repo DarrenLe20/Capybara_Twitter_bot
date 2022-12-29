@@ -1,4 +1,4 @@
-![tests](https://github.com/DarrenLe20/Capybara_Twitter_bot/blob/main/.github/workflows/bot.yml/badge.svg)
+![Workflow Status](https://github.com/DarrenLe20/Capybara_Twitter_bot/actions//workflows/bot.yml/badge.svg?event=push)
 
 # Daily Capybara Bot
 
