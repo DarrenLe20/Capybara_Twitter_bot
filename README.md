@@ -27,15 +27,17 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 
       ```API_SECRET_KEY="your_api_secret_key"```
 
-      ```ACCESS="your_access_token```
+      ```ACCESS="your_access_token"```
 
-      ```ACCESS_SECRET="your_access_secret_token```
+      ```ACCESS_SECRET="your_access_secret_token"```
 
       ```GIPHY_KEY="your_giphy_key"```
 
 9. Create a config.py file in the root directory of the project and declare the following variables
 
       ```SLEEP_TIME = 86400```
+
+## Docker
 
 ## Author
 

@@ -59,3 +59,4 @@ def tweet(api):
 if __name__ == "__main__":
     api = api_auth()
     tweet(api)
+    # sleep(config.SLEEP_TIME)
