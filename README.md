@@ -20,6 +20,7 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 6. Create a Giphy developer account and create a new app [here](https://developers.giphy.com/)
 7. Generate the GIPHY SDK key for the app
 8. Create environment variables
+
       ```export API_KEY="your_api_key"```
 
       ```export API_SECRET_KEY="your_api_secret_key"```
