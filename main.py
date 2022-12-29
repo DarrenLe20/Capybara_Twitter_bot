@@ -44,7 +44,6 @@ def tweet(api):
     # tweet gif with date
     msg = get_current_date()
     api.update_with_media("image.gif", msg)
-    print("Tweeted successfully!")
 
 
 if __name__ == "__main__":

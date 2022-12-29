@@ -16,9 +16,10 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 
 3. Create a Twitter developer account and create a new app [here](https://developer.twitter.com/)
 4. Generate the necessery keys and tokens for the app
-5. Create a Giphy developer account and create a new app [here](https://developers.giphy.com/)
-6. Generate the GIPHY SDK key for the app
-7. Create a config.py file in the root directory of the project and declare the following variables
+5. Apply for elevated access to the Twitter API
+6. Create a Giphy developer account and create a new app [here](https://developers.giphy.com/)
+7. Generate the GIPHY SDK key for the app
+8. Create a config.py file in the root directory of the project and declare the following variables
 
       ```API_KEY = "your_api_key"```
 
@@ -29,6 +30,8 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
       ```ACCESS_TOKEN_SECRET = "your_access_secret_token```
 
       ```GIPHY_API_KEY = "your_giphy_key"```
+
+      ```SLEEP_TIME = 86400```
 
 ## Author
 
