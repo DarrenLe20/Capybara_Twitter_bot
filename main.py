@@ -6,11 +6,7 @@ import requests
 import json
 import os
 import tweepy as tp
-from time import sleep
 from datetime import date
-
-# import ./config.py where keys are stored
-import config
 
 load_dotenv()
 
@@ -56,4 +52,3 @@ def tweet(api):
 if __name__ == "__main__":
     api = api_auth()
     tweet(api)
-    # sleep(config.SLEEP_TIME)

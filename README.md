@@ -35,11 +35,13 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 
       ```GIPHY_KEY="your_giphy_key"```
 
-9. Create a config.py file in the root directory of the project and declare the following variables
+9. Run the main.py file
 
-      ```SLEEP_TIME = 86400```
+      ```python main.py```
 
-## Docker
+## Automation
+
+The bot is automated using GitHub Actions. The workflow is triggered every time a commit is pushed to the repository or at 9AM everyday.
 
 ## Author
 
