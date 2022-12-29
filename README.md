@@ -21,7 +21,7 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 5. Apply for elevated access to the Twitter API
 6. Create a Giphy developer account and create a new app [here](https://developers.giphy.com/)
 7. Generate the GIPHY SDK key for the app
-8. Createa .env file with the following environment variables
+8. Create a .env file with the following environment variables
 
       ```API_KEY="your_api_key"```
 
