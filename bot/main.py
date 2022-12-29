@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+
 from urllib import parse, request
 import requests
 import json
+import os
 import tweepy as tp
 from time import sleep
 from datetime import date
@@ -11,8 +14,9 @@ import config
 
 # Authenticate to Twitter
 def api_auth():
-    auth = tp.OAuthHandler(config.API_KEY, config.API_SECRET_KEY)
-    auth.set_access_token(config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET)
+    auth = tp.OAuthHandler(os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
+    auth.set_access_token(os.getenv("ACCESS_TOKEN"),
+                          os.getenv("ACCESS_SECRET_TOKEN"))
     api = tp.API(auth)
     return api
 
@@ -21,7 +25,7 @@ def get_gif():
     url = "http://api.giphy.com/v1/gifs/random"
     params = parse.urlencode({
         "tag": "capybaras",
-        "api_key": config.GIPHY_API_KEY
+        "api_key": os.getenv("GIPHY_API_KEY"),
     })
     with request.urlopen("".join((url, "?", params))) as response:
         data = json.loads(response.read())
