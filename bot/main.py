@@ -17,9 +17,6 @@ load_dotenv()
 
 # Authenticate to Twitter
 def api_auth():
-    # auth = tp.OAuthHandler(os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
-    # auth.set_access_token(os.getenv("ACCESS_TOKEN"),
-    #                       os.getenv("ACCESS_SECRET_TOKEN"))
     auth = tp.OAuth1UserHandler(
         os.getenv("API_KEY"), os.getenv("API_SECRET_KEY"))
     auth.set_access_token(os.getenv("ACCESS"), os.getenv("ACCESS_SECRET"))
@@ -31,7 +28,6 @@ def get_gif():
     url = "http://api.giphy.com/v1/gifs/random"
     params = parse.urlencode({
         "tag": "capybaras",
-        # "api_key": os.getenv("GIPHY_API_KEY"),
         "api_key": os.getenv("GIPHY_KEY"),
     })
     with request.urlopen("".join((url, "?", params))) as response:

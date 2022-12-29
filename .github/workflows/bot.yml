@@ -4,6 +4,8 @@
 name: Capybara Twitter Bot
 
 on: [push, pull_request]
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   build:
@@ -39,3 +41,19 @@ jobs:
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
         run: |
           pytest --cov
+
+  tweet:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: run script
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          ACCESS: ${{ secrets.ACCESS }}
+          ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
+          GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
+        run: |
+          python main.py
