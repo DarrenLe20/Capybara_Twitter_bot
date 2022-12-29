@@ -2,6 +2,8 @@
 
 A Twitter bot that tweets a gif of a capybara every 24 hours.
 
+Twitter: [@capyenjoyerbot](https://twitter.com/capyenjoyerbot)
+
 ## How it works
 
 The bot is written in Python and uses the [Tweepy](https://www.tweepy.org/) library to interact with the Twitter API. The bot extracts a random GIF with the hashtag "
@@ -19,17 +21,17 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 5. Apply for elevated access to the Twitter API
 6. Create a Giphy developer account and create a new app [here](https://developers.giphy.com/)
 7. Generate the GIPHY SDK key for the app
-8. Create environment variables
+8. Createa .env file with the following environment variables
 
-      ```export API_KEY="your_api_key"```
+      ```API_KEY="your_api_key"```
 
-      ```export API_SECRET_KEY="your_api_secret_key"```
+      ```API_SECRET_KEY="your_api_secret_key"```
 
-      ```export ACCESS_TOKEN="your_access_token```
+      ```ACCESS="your_access_token```
 
-      ```export ACCESS_TOKEN_SECRET="your_access_secret_token```
+      ```ACCESS_SECRET="your_access_secret_token```
 
-      ```export GIPHY_API_KEY = "your_giphy_key"```
+      ```GIPHY_KEY="your_giphy_key"```
 9. Create a config.py file in the root directory of the project and declare the following variables
 
       ```SLEEP_TIME = 86400```
