@@ -29,7 +29,7 @@ capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
 
       ```export ACCESS_TOKEN_SECRET="your_access_secret_token```
 
-      ```export GIPHY_API_KEY = "your_giphy_key"```
+      ```export GIPHY_API_KEY="your_giphy_key"```
 9. Create a config.py file in the root directory of the project and declare the following variables
 
       ```SLEEP_TIME = 86400```
