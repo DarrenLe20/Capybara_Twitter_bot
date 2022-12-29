@@ -1,3 +1,5 @@
+![tests](https://github.com/DarrenLe20/Capybara_Twitter_bot/blob/main/.github/workflows/bot.yml/badge.svg)
+
 # Daily Capybara Bot
 
 A Twitter bot that tweets a gif of a capybara every 24 hours.
