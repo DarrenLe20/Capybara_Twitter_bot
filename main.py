@@ -36,7 +36,6 @@ def get_current_date():
 def tweet(api):
     gif_data = get_gif()
     gif = gif_data["data"]["images"]["downsized"]["url"]
-    slug = gif_data["data"]["slug"]
     data = requests.get(gif).content
     # download gif
     with open("image.gif", "wb") as f:
