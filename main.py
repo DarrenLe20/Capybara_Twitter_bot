@@ -1,6 +1,9 @@
 from urllib import parse, request
+import requests
 import json
 import tweepy as tp
+from time import sleep
+from datetime import date
 
 # import ./config.py where keys are stored
 import config
@@ -15,21 +18,39 @@ def api_auth():
 
 
 def get_gif():
-    url = "http://api.giphy.com/v1/gifs/search"
+    url = "http://api.giphy.com/v1/gifs/random"
     params = parse.urlencode({
-        "q": "capybara",
-        "api_key": config.GIPHY_API_KEY,
-        "limit": "1"
+        "tag": "capybaras",
+        "api_key": config.GIPHY_API_KEY
     })
     with request.urlopen("".join((url, "?", params))) as response:
         data = json.loads(response.read())
+    return data
 
 
-def tweet(api, text):
-    api.update_status(text)
+def get_current_date():
+    today = date.today().strftime("%B %d, %Y")
+    return today
+
+
+def tweet(api):
+    gif_data = get_gif()
+    gif = gif_data["data"]["images"]["downsized"]["url"]
+    slug = gif_data["data"]["slug"]
+    data = requests.get(gif).content
+    # download gif
+    with open("image.gif", "wb") as f:
+        f.write(data)
+        f.close()
+    # tweet gif with date
+    msg = get_current_date()
+    # api.update_with_media("image.gif", msg)
     print("Tweeted successfully!")
 
 
 if __name__ == "__main__":
     api = api_auth()
-    tweet(api, "Hello, world!")
+    while True:
+        tweet(api)
+        # sleep(config.SLEEP_TIME)
+        break
