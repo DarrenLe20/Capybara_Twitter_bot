@@ -20,10 +20,10 @@ def api_auth():
     return api
 
 
-def get_gif():
+def get_gif(tag="capybaras"):
     url = "http://api.giphy.com/v1/gifs/random"
     params = parse.urlencode({
-        "tag": "capybaras",
+        "tag": tag,
         "api_key": os.getenv("GIPHY_KEY"),
     })
     with request.urlopen("".join((url, "?", params))) as response:
@@ -47,6 +47,14 @@ def tweet(api):
     # tweet gif with date
     msg = get_current_date()
     api.update_status_with_media(msg, "image.gif")
+
+
+def get_msg(api):
+    msgs = api.list_direct_messages()  # 20 msgs default
+    for message in reversed(msgs):
+        sender = message.message_create["sender_id"]
+        content = message.message_create["message_data"]["text"]
+        api.destroy_direct_message(message.id)
 
 
 if __name__ == "__main__":
