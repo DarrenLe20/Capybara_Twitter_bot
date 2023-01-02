@@ -52,8 +52,8 @@ def tweet(api):
 
 def msg_follower(api, msg):
     followers = api.get_follower_ids()
-    media = api.media_upload(filename="image.gif")
     for follower in followers:
+        media = api.media_upload(filename="image.gif")
         api.send_direct_message(
             follower, msg, attachment_type='media', attachment_media_id=media.media_id)
 
