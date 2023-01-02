@@ -1,10 +1,11 @@
 import unittest
 import main
 import requests
+from datetime import date
 
 
 class TestBot(unittest.TestCase):
-    def test_bot(self):
+    def test_sanity(self):
         self.assertTrue(True)
 
     def test_GIF_retrieval(self):
@@ -22,9 +23,20 @@ class TestBot(unittest.TestCase):
         self.assertTrue("image.gif")
 
     def test_date_retrieval(self):
-        date = main.get_current_date()
-        self.assertTrue(date)
+        res = main.get_current_date()
+        expected = date.today().strftime("%B %d, %Y")
+        self.assertTrue(res == expected)
 
     def test_twitter_auth(self):
         api = main.api_auth()
         self.assertTrue(api)
+
+    def test_get_followers(self):
+        api = main.api_auth()
+        followers = api.get_follower_ids()
+        self.assertTrue(followers)
+
+    def test_media_upload(self):
+        api = main.api_auth()
+        media = api.media_upload(filename="image.gif")
+        self.assertTrue(media)
