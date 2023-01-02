@@ -47,14 +47,15 @@ def tweet(api):
     # tweet gif with date
     msg = get_current_date()
     api.update_status_with_media(msg, "image.gif")
+    msg_follower(api)
 
 
-def get_msg(api):
-    msgs = api.list_direct_messages()  # 20 msgs default
-    for message in reversed(msgs):
-        sender = message.message_create["sender_id"]
-        content = message.message_create["message_data"]["text"]
-        api.destroy_direct_message(message.id)
+def msg_follower(api):
+    followers = api.followers_ids(api.me().id)
+    media = api.media_upload(filename="image.gif")
+    for follower in followers:
+        api.send_direct_message(
+            follower, attachment_type='media', attachment_media_id=media.media_id)
 
 
 if __name__ == "__main__":
