@@ -9,7 +9,7 @@ Twitter: [@capyenjoyerbot](https://twitter.com/capyenjoyerbot)
 ## How it works
 
 The bot is written in Python and uses the [Tweepy](https://www.tweepy.org/) library to interact with the Twitter API. The bot extracts a random GIF with the hashtag "
-capybaras" from [Giphy](https://giphy.com/) and tweets it every 24 hours.
+capybaras" from [Giphy](https://giphy.com/) and tweets it/messages it to every follower every 24 hours.
 
 ## Running the bot locally
 
